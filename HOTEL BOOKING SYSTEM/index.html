@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudStay - Hotel Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">☁️ CloudStay</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#booking">Booking</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Find Your Perfect Stay</h1>
+
+        <p>
+            Cloud-Based Hotel Booking System
+        </p>
+
+        <div class="search-box">
+
+            <input type="text" id="location"
+                   placeholder="Enter city or location">
+
+            <input type="date" id="checkin">
+
+            <input type="date" id="checkout">
+
+            <select id="guests">
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+            </select>
+
+            <button onclick="searchHotels()">Search</button>
+
+        </div>
+    </div>
+
+</section>
+
+
+<section class="hotels" id="hotels">
+
+    <h2>Popular Hotels</h2>
+
+    <p class="subtitle">
+        Choose from our comfortable and affordable hotels
+    </p>
+
+    <div class="hotel-container">
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">🏨</div>
+
+            <div class="hotel-info">
+
+                <h3>Grand Palace Hotel</h3>
+
+                <p>📍 Chennai, Tamil Nadu</p>
+
+                <p>⭐ 4.8 Rating</p>
+
+                <h4>₹3,500 / Night</h4>
+
+                <button onclick="openBooking('Grand Palace Hotel', 3500)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">🏝️</div>
+
+            <div class="hotel-info">
+
+                <h3>Ocean View Resort</h3>
+
+                <p>📍 Pondicherry</p>
+
+                <p>⭐ 4.6 Rating</p>
+
+                <h4>₹4,200 / Night</h4>
+
+                <button onclick="openBooking('Ocean View Resort', 4200)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hotel-card">
+
+            <div class="hotel-image">🏢</div>
+
+            <div class="hotel-info">
+
+                <h3>City Comfort Hotel</h3>
+
+                <p>📍 Bangalore</p>
+
+                <p>⭐ 4.5 Rating</p>
+
+                <h4>₹2,800 / Night</h4>
+
+                <button onclick="openBooking('City Comfort Hotel', 2800)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="booking" id="booking">
+
+    <h2>Hotel Booking</h2>
+
+    <div class="booking-box">
+
+        <form onsubmit="confirmBooking(event)">
+
+            <label>Selected Hotel</label>
+
+            <input type="text" id="hotelName"
+                   placeholder="Select a hotel"
+                   readonly>
+
+            <label>Guest Name</label>
+
+            <input type="text" id="guestName"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Email</label>
+
+            <input type="email" id="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Check-in Date</label>
+
+            <input type="date" id="bookingCheckin"
+                   required>
+
+            <label>Check-out Date</label>
+
+            <input type="date" id="bookingCheckout"
+                   required>
+
+            <label>Number of Guests</label>
+
+            <select id="bookingGuests">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+            <label>Room Type</label>
+
+            <select id="roomType">
+                <option>Standard Room</option>
+                <option>Deluxe Room</option>
+                <option>Suite</option>
+            </select>
+
+            <button type="submit">
+                Confirm Booking
+            </button>
+
+        </form>
+
+        <div id="confirmation"></div>
+
+    </div>
+
+</section>
+
+
+<section class="cloud" id="about">
+
+    <h2>Cloud-Based Hotel Booking</h2>
+
+    <p>
+        CloudStay is a simple cloud-based hotel booking system
+        that allows users to search hotels, select rooms and
+        submit booking details through an online website.
+    </p>
+
+    <div class="features">
+
+        <div>
+            ☁️
+            <h3>Cloud Storage</h3>
+            <p>Booking information can be stored in cloud databases.</p>
+        </div>
+
+        <div>
+            🔐
+            <h3>Secure Booking</h3>
+            <p>User booking details can be managed securely.</p>
+        </div>
+
+        <div>
+            📱
+            <h3>Anywhere Access</h3>
+            <p>Users can access the hotel system from different devices.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 CloudStay Hotel Booking System</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
